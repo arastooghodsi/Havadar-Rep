@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "havadar"
+    }
+  },
+  "defaultProject": "havadar",
+  "cli": {
+    "analytics": "7c888a03-9361-4607-8857-c172e9fb05b9"
+  }
 }
