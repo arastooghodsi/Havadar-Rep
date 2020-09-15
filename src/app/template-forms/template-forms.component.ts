@@ -8,23 +8,19 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateFormsComponent {
 
-  username: string = "";
-  email: string = "";
-  gender: string = "";
-
   @ViewChild('f') inputForm: NgForm
 
   // onSubmit(form: HTMLFormElement) {
   //   console.log(form);
   // }
 
+  defaultGender = 'male';
+  color = '';
   data: any[];
   onSubmit() {
     console.log(this.inputForm);
     // alert(this.username + " , " + this.email + " , " + this.gender);
-    if(this.email == ""){
-      alert(this.email);
-    }
+
   }
 
 }

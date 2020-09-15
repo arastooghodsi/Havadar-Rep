@@ -19,19 +19,25 @@
              ngModel
              name="email"
              required
-             email>
+             email
+             #email = "ngModel">
+        <span class="help-block" *ngIf="!email.valid && email.touched">Enter a valid email</span>
     </div>
 
     <div class="form-group">
       <label>Gender</label>
       <select class="form-control"
               id="gender"
-              ngModel
+              [ngModel] = defaultGender
               name="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled] = "!f.valid">Submit</button>
+    <input class="form-control" type="text" name="color" [(ngModel)]="color">
+    <span>Your favorite color: {{color}}</span>
+    <button type="submit"
+            class="btn btn-primary"
+            [disabled] = "!f.valid">Submit</button>
   </form>
 </div>
