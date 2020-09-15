@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./fans-form.component.css']
 })
 export class FansFormComponent {
+
+
+
 }
