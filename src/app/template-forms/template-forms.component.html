@@ -45,6 +45,7 @@
     </div> <!--Gender Textbox End-->
 
     <!--User Websire Textbox Start-->
+    <p>وبسایت</p>
     <input style="direction: ltr" class="form-control" type="text" name="website" [(ngModel)]="website" ngModel>
     <span>وبسایت شما:{{ website }}</span> <!--User Websire Textbox End-->
           <br><button type="submit" class="btn btn-primary" (click) = onClick()>بررسی سایت</button>
@@ -83,12 +84,12 @@
 
 
 <!--<div *ngIf="isSubmitted">-->
-  <!--<p>نام کاربری: {{ user.username }}</p>-->
-  <!--<p>ایمیل: {{ user.email }}</p>-->
-  <!--<p>جنسیت: {{ user.gender }}</p>-->
-  <!--<p>وبسایت: {{ user.website }}</p>-->
-  <!--<p>تحصیلات: {{ user.educationDegree }}</p>-->
-  <!--&lt;!&ndash;<p>امتیاز: {{ user.score }}</p>&ndash;&gt;-->
+  <!--<p>نام کاربری: {{ users.username }}</p>-->
+  <!--<p>ایمیل: {{ users.email }}</p>-->
+  <!--<p>جنسیت: {{ users.gender }}</p>-->
+  <!--<p>وبسایت: {{ users.website }}</p>-->
+  <!--<p>تحصیلات: {{ users.educationDegree }}</p>-->
+  <!--&lt;!&ndash;<p>امتیاز: {{ users.score }}</p>&ndash;&gt;-->
 <!--</div>-->
 
   <!--Table Start-->
@@ -103,14 +104,16 @@
         <!--<th>امتیازات</th>-->
       </tr>
     </thead>
+    <!--<tbody *ngFor="let user of users">-->
     <tbody>
       <tr>
-        <th>{{ user.username }}</th>
-        <th>{{ user.email }}</th>
-        <th>{{ user.gender }}</th>
-        <th><a>{{ user.website }}</th>
-        <th>{{ user.educationDegree }}</th>
+        <th>{{ users.username }}</th>
+        <th>{{ users.email }}</th>
+        <th>{{ users.gender }}</th>
+        <th>{{ users.website }}</th>
+        <th>{{ users.educationDegree }}</th>
         <!--<th>score</th>-->
       </tr>
     </tbody>
   </table> <!--Table End-->
+

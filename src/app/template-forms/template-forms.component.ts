@@ -20,7 +20,7 @@ export class TemplateFormsComponent {
   website = '';
   data: any[];
 
-  user={
+  users={
     username: '',
     email: '',
     gender: '',
@@ -33,11 +33,11 @@ export class TemplateFormsComponent {
 
   onSubmit() {
     this.isSubmitted = true;
-    this.user.username = this.inputForm.value.groupUser.username;
-    this.user.email = this.inputForm.value.groupUser.email;
-    this.user.gender = this.inputForm.value.gender;
-    this.user.website= this.inputForm.value.website;
-    this.user.educationDegree = this.inputForm.value.educationDegree;
+    this.users.username = this.inputForm.value.groupUser.username;
+    this.users.email = this.inputForm.value.groupUser.email;
+    this.users.gender = this.inputForm.value.gender;
+    this.users.website= this.inputForm.value.website;
+    this.users.educationDegree = this.inputForm.value.educationDegree;
     // this.user.score = this.inputForm.value.score;
 
     console.log(this.inputForm);
