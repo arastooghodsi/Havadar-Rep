@@ -13,7 +13,7 @@ export class TemplateFormsComponent {
   gender: string = "";
 
   @ViewChild('f') inputForm: NgForm
-
+  
   // onSubmit(form: HTMLFormElement) {
   //   console.log(form);
   // }
