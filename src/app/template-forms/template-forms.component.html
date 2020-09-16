@@ -45,9 +45,9 @@
     </div> <!--Gender Textbox End-->
 
     <!--User Websire Textbox Start-->
-    <input class="form-control" type="text" name="website" [(ngModel)]="website" ngModel pattern="[www.]*[.]*">
+    <input style="direction: ltr" class="form-control" type="text" name="website" [(ngModel)]="website" ngModel>
     <span>وبسایت شما:{{ website }}</span> <!--User Websire Textbox End-->
-          <br><button type="submit" class="btn btn-primary" (click) = onClick(website)>بررسی سایت</button>
+          <br><button type="submit" class="btn btn-primary" (click) = onClick()>بررسی سایت</button>
     <br><br>
 
     <!--RadioButton Start-->
@@ -108,7 +108,7 @@
         <th>{{ user.username }}</th>
         <th>{{ user.email }}</th>
         <th>{{ user.gender }}</th>
-        <th>{{ user.website }}</th>
+        <th><a>{{ user.website }}</th>
         <th>{{ user.educationDegree }}</th>
         <!--<th>score</th>-->
       </tr>

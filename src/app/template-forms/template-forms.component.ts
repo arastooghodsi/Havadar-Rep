@@ -51,11 +51,8 @@ export class TemplateFormsComponent {
 
   }
 
-  onClick(website) {
-    // web = '';
-    // web = website;
-    if(this.inputForm.website.pattern.value)
-      alert('yes');
+  onClick() {
+      alert(this.inputForm.value.website);
   }
 
 }
