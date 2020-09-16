@@ -1,27 +1,33 @@
 <div class="container">
-  <form (ngSubmit) = "onSubmit()" #f = "ngForm">
-    <div class="form-group">
-      <label>Username</label>
-      <input type="text"
-             class="form-control"
-             id="username"
-             ngModel
-             name="username"
-             required>
-    </div>
+<!--  <form (ngSubmit) = "onSubmit()" #f = "ngForm" ngModelGroup="groupUser" #group="ngModelGroup">-->
+    <form (ngSubmit) = "onSubmit()" #f = "ngForm">
+    <div ngModelGroup = "groupUser" #group1 = "ngModelGroup">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text"
+               class="form-control"
+               id="username"
+               ngModel
+               name="username"
+               required
+               #username = "ngModel">
+        <span class="help-block" *ngIf="formValid && !username.valid">Enter a valid Username</span>
+<!--        <span class="help-block" *ngIf="formValid">Enter a valid Username</span>-->
+      </div>
 
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text"
-             class="form-control"
-             value="emailValue"
-             id="email"
-             ngModel
-             name="email"
-             required
-             email
-             #email = "ngModel">
-        <span class="help-block" *ngIf="!email.valid && email.touched">Enter a valid email</span>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text"
+               class="form-control"
+               value="emailValue"
+               id="email"
+               ngModel
+               name="email"
+               required
+               email
+               #email = "ngModel">
+                <span class="help-block" *ngIf="formValid && !email.valid">Enter a valid Email</span>
+      </div>
     </div>
 
     <div class="form-group">
@@ -38,6 +44,6 @@
     <span>Your favorite color: {{color}}</span>
     <button type="submit"
             class="btn btn-primary"
-            [disabled] = "!f.valid">Submit</button>
+            [disabled] = "!f.dirty">Submit</button>
   </form>
 </div>
