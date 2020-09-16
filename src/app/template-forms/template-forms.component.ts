@@ -8,23 +8,54 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateFormsComponent {
 
-  username: string = "";
-  email: string = "";
-  gender: string = "";
+  public formValid = false;
+  educationDegrees = ['دیپلم', 'لیسانس', 'فوق لیسانس', 'دکتری'];
+  web = '';
 
   @ViewChild('f') inputForm: NgForm
-  
-  // onSubmit(form: HTMLFormElement) {
-  //   console.log(form);
-  // }
+  @ViewChild('group1') inputValidForm: NgForm
+  // @ViewChild('username') inputUpdateUsername: NgForm
 
+  defaultGender = 'آقا';
+  website = '';
   data: any[];
+
+  user={
+    username: '',
+    email: '',
+    gender: '',
+    website: '',
+    educationDegree: '',
+    // score: ''
+  };
+
+  isSubmitted = false;
+
   onSubmit() {
+    this.isSubmitted = true;
+    this.user.username = this.inputForm.value.groupUser.username;
+    this.user.email = this.inputForm.value.groupUser.email;
+    this.user.gender = this.inputForm.value.gender;
+    this.user.website= this.inputForm.value.website;
+    this.user.educationDegree = this.inputForm.value.educationDegree;
+    // this.user.score = this.inputForm.value.score;
+
     console.log(this.inputForm);
-    // alert(this.username + " , " + this.email + " , " + this.gender);
-    if(this.email == ""){
-      alert(this.email);
+    if(!this.inputValidForm.valid) {
+      this.formValid = true;
     }
+    // if(!this.inputValidForm.form.updateOn) {
+    //   this.formValid = true;
+      // alert('yes');
+    // }
+
+  }
+
+  onClick(website) {
+    // web = '';
+    // web = website;
+    if(this.inputForm.website.pattern.value)
+      alert('yes');
   }
 
 }

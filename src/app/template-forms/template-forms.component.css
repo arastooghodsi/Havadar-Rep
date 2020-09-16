@@ -1,5 +1,7 @@
+
 html, body {
     background: #f7f7f7 !important;
+    direction: rtl;
 }
 
 form {
@@ -9,4 +11,7 @@ form {
 
 input.ng-invalid.ng-touched {
   border: 1px solid red;
+}
+span.help-block {
+  color: red;
 }

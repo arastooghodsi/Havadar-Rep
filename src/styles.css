@@ -1,5 +1,10 @@
 /* Global Styles */
 
+.container {
+  direction: rtl;
+  align-items: right;
+  margin: 0;
+}
 
 h1 {
   color: #369;
@@ -14,7 +19,6 @@ h2, h3 {
 body {
   margin: 2em;
   direction: rtl;
-  align: "right";
 }
 body, input[text], button {
   color: #333;
@@ -70,3 +74,13 @@ nav a.active {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+  direction: rtl;
+  text-align: center;
+}
+
+form {
+  direction: rtl;
+  text-align: right;
+}

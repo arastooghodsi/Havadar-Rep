@@ -1,37 +1,116 @@
 <div class="container">
+  <!--Form Start-->
   <form (ngSubmit) = "onSubmit()" #f = "ngForm">
-    <div class="form-group">
-      <label>Username</label>
-      <input type="text"
-             class="form-control"
-             id="username"
-             ngModel
-             name="username"
-             required>
-    </div>
+    <!--Username & Email Group Validation Start-->
+    <div ngModelGroup = "groupUser" #group1 = "ngModelGroup">
+      <!--Username Textbox Start-->
+      <div class="form-group">
+        <label>نام کاربری</label>
+        <input type="text"
+               class="form-control"
+               id="username"
+               ngModel
+               name="username"
+               required
+               #username = "ngModel">
+        <span class="help-block" *ngIf="formValid && !username.valid">لطفا نام کاربری معتبر وارد نمائید...</span>
+      </div> <!--Username Textbox End-->
 
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text"
-             class="form-control"
-             value="emailValue"
-             id="email"
-             ngModel
-             name="email"
-             required
-             email>
-    </div>
+      <!--Email Textbox Start-->
+      <div class="form-group">
+        <label>ایمیل</label>
+        <input type="text"
+               class="form-control"
+               value="emailValue"
+               id="email"
+               ngModel
+               name="email"
+               required
+               email
+               #email = "ngModel">
+               <span class="help-block" *ngIf="formValid && !email.valid">لطفا ایمیل معتبر وارد نمائید...</span>
+      </div> <!--Email Textbox End-->
+    </div> <!--Username & Email Group Validation End-->
 
+    <!--Gender Textbox Start-->
     <div class="form-group">
-      <label>Gender</label>
+      <label>جنسیت</label>
       <select class="form-control"
               id="gender"
-              ngModel
+              [ngModel] = defaultGender
               name="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
+        <option value="آقا">اقا</option>
+        <option value="خانم">خانم</option>
       </select>
-    </div>
-    <button type="submit" class="btn btn-primary" [disabled] = "!f.valid">Submit</button>
-  </form>
+    </div> <!--Gender Textbox End-->
+
+    <!--User Websire Textbox Start-->
+    <input class="form-control" type="text" name="website" [(ngModel)]="website" ngModel pattern="[www.]*[.]*">
+    <span>وبسایت شما:{{ website }}</span> <!--User Websire Textbox End-->
+          <br><button type="submit" class="btn btn-primary" (click) = onClick(website)>بررسی سایت</button>
+    <br><br>
+
+    <!--RadioButton Start-->
+    <p>مدرک تحصیلی</p>
+    <div class="radio" *ngFor="let educationDegree of educationDegrees">
+      <label>
+        <input type="radio" name="educationDegree" ngModel [value]="educationDegree">
+          {{ educationDegree }}
+      </label>
+    </div> <!--RadioButton Start-->
+
+    <br>
+
+      <!--CheckBox Start-->
+      <!--<p>امتیازات</p>-->
+      <!--<div class="checkbox">-->
+        <!--<input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" ngModel [value] = "checkbox">-->
+        <!--<label class="form-check-label" for="checkbox">برداشت از حساب با کارت</label><br>-->
+        <!--<input type="checkbox" class="form-check-input" id="checkbox2" name="checkbox2" ngModel>-->
+        <!--<label class="form-check-label" for="checkbox2">برداشت از حساب توسط شخص دیگر</label><br>-->
+        <!--<input type="checkbox" class="form-check-input" id="checkbox3" name="checkbox3" ngModel>-->
+        <!--<label class="form-check-label" for="checkbox3">برداشت از حساب در تایم های متناوب</label><br><br><br>-->
+      <!--</div> -->
+      <!--CheckBox End-->
+
+    <!--Submit Button Start-->
+    <button type="submit"
+            class="btn btn-primary"
+            [disabled] = "!f.dirty">تائید</button> <!--Submit Button End-->
+
+  </form> <!--Form End-->
 </div>
+
+
+<!--<div *ngIf="isSubmitted">-->
+  <!--<p>نام کاربری: {{ user.username }}</p>-->
+  <!--<p>ایمیل: {{ user.email }}</p>-->
+  <!--<p>جنسیت: {{ user.gender }}</p>-->
+  <!--<p>وبسایت: {{ user.website }}</p>-->
+  <!--<p>تحصیلات: {{ user.educationDegree }}</p>-->
+  <!--&lt;!&ndash;<p>امتیاز: {{ user.score }}</p>&ndash;&gt;-->
+<!--</div>-->
+
+  <!--Table Start-->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>نام کاربری</th>
+        <th>ایمیل</th>
+        <th>جنسیت</th>
+        <th>وبسایت</th>
+        <th>تحصیلات</th>
+        <!--<th>امتیازات</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>{{ user.username }}</th>
+        <th>{{ user.email }}</th>
+        <th>{{ user.gender }}</th>
+        <th>{{ user.website }}</th>
+        <th>{{ user.educationDegree }}</th>
+        <!--<th>score</th>-->
+      </tr>
+    </tbody>
+  </table> <!--Table End-->
