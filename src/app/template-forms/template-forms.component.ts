@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Fan } from '../fan';
+import { FANS } from '../fanTableData';
 
 @Component({
   selector: 'app-template-forms',
@@ -10,7 +12,7 @@ export class TemplateFormsComponent {
 
   public formValid = false;
   educationDegrees = ['دیپلم', 'لیسانس', 'فوق لیسانس', 'دکتری'];
-  web = '';
+  // fans: Fan[] = [][];
 
   @ViewChild('f') inputForm: NgForm
   @ViewChild('group1') inputValidForm: NgForm
@@ -20,19 +22,25 @@ export class TemplateFormsComponent {
   website = '';
   data: any[];
 
-  users={
+  fans = FANS;
+  // fans: Fan[];
+  // selectedFan = Fan;
+  users = {
     username: '',
     email: '',
     gender: '',
     website: '',
-    educationDegree: '',
-    // score: ''
+    educationDegree: ''
+    // score: '']]
   };
 
+  // fan: FANS[];
   isSubmitted = false;
 
   onSubmit() {
     this.isSubmitted = true;
+    // this.users.push(this.inputForm.value.groupUser.username, this.inputForm.value.groupUser.email,
+    //   this.inputForm.value.gender, this.inputForm.value.website, this.inputForm.value.educationDegree);
     this.users.username = this.inputForm.value.groupUser.username;
     this.users.email = this.inputForm.value.groupUser.email;
     this.users.gender = this.inputForm.value.gender;

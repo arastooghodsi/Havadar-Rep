@@ -1,18 +1,10 @@
-export class Hero {
-
-  // constructor(
-  //   public id: number,
-  //   public name: string,
-  //   public dateYear: string,
-  //   public teamFavorite: string
-  // ) {  }
+export class Fan {
 
   constructor(
-    public id: number,
-    public name: string,
-    public power: string,
-    public alterEgo?: string
+    public username: string,
+    public email: string,
+    public gender: string,
+    public website: string,
+    public educationDegree
   ) {  }
-
-
 }

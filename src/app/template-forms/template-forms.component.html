@@ -79,6 +79,10 @@
             class="btn btn-primary"
             [disabled] = "!f.dirty">تائید</button> <!--Submit Button End-->
 
+    <!--<div ng-init="myVar = 'https://www.w3schools.com'">-->
+    <a href="https://www.w3schools.com">myVar</a>
+    <!--</div>-->
+
   </form> <!--Form End-->
 </div>
 
@@ -104,14 +108,14 @@
         <!--<th>امتیازات</th>-->
       </tr>
     </thead>
-    <!--<tbody *ngFor="let user of users">-->
-    <tbody>
+    <tbody *ngFor="let fan of fans">
+    <!--<tbody>-->
       <tr>
-        <th>{{ users.username }}</th>
-        <th>{{ users.email }}</th>
-        <th>{{ users.gender }}</th>
-        <th>{{ users.website }}</th>
-        <th>{{ users.educationDegree }}</th>
+        <th>{{ fan.username }}</th>
+        <th>{{ fan.email }}</th>
+        <th>{{ fan.gender }}</th>
+        <th><a href = "https://www.w3schools.com">{{ fan.website }}</a></th>
+        <th>{{ fan.educationDegree }}</th>
         <!--<th>score</th>-->
       </tr>
     </tbody>
