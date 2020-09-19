@@ -64,3 +64,18 @@ export class TemplateFormsComponent {
   }
 
 }
+
+
+// checkboxCart: string = 'برداشت از حساب با کارت';
+// checkboxUnCart: string = 'برداشت از حساب بدون کارت';
+// public onChangeCheckboxCart(event: Event) {
+//   if((event.target as HTMLInputElement).checked)
+//     this.checkboxCart = (event.target as HTMLInputElement).value;
+//   // alert(this.checkboxCart);
+// }
+//
+// public onChangeCheckboxUnCart(event: Event) {
+//   if((event.target as HTMLInputElement).checked)
+//     this.checkboxUnCart = (event.target as HTMLInputElement).value;
+//   // alert(this.checkboxUnCart);
+// }
