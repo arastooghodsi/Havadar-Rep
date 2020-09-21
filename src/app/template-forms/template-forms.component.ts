@@ -12,44 +12,47 @@ export class TemplateFormsComponent {
 
   public formValid = false;
   educationDegrees = ['دیپلم', 'لیسانس', 'فوق لیسانس', 'دکتری'];
-  // fans: Fan[] = [][];
 
-  @ViewChild('f') inputForm: NgForm
-  @ViewChild('group1') inputValidForm: NgForm
+  @ViewChild('f') inputForm: NgForm;
+  @ViewChild('group1') inputValidForm: NgForm;
   // @ViewChild('username') inputUpdateUsername: NgForm
 
   defaultGender = 'آقا';
   website = '';
   data: any[];
 
-  fans = FANS;
-  // fans: Fan[];
-  // selectedFan = Fan;
-  users = {
-    username: '',
-    email: '',
-    gender: '',
-    website: '',
-    educationDegree: ''
+  fans: Fan[];
+  users: any = [{
+    username: 'ارسطو',
+    email: 'arar@atata ',
+    gender: 'آقا',
+    website: 'ww.sik.com',
+    educationDegree: 'فوق لیسانس'
     // score: '']]
-  };
+  }];
 
-  // fan: FANS[];
   isSubmitted = false;
 
   onSubmit() {
     this.isSubmitted = true;
-    // this.users.push(this.inputForm.value.groupUser.username, this.inputForm.value.groupUser.email,
-    //   this.inputForm.value.gender, this.inputForm.value.website, this.inputForm.value.educationDegree);
+    // this.fans.push(
+    //   {
+    //     fans.username = this.inputForm.value.groupUser.username
+    //     fans.email = this.inputForm.value.groupUser.email,
+    //     fans.gender = this.inputForm.value.gender,
+    //     fans.website = this.inputForm.value.website,
+    //     fans.edudationDegree = this.inputForm.value.educationDegree'
+    //   });
     this.users.username = this.inputForm.value.groupUser.username;
     this.users.email = this.inputForm.value.groupUser.email;
     this.users.gender = this.inputForm.value.gender;
-    this.users.website= this.inputForm.value.website;
+    this.users.website = this.inputForm.value.website;
     this.users.educationDegree = this.inputForm.value.educationDegree;
+
     // this.user.score = this.inputForm.value.score;
 
     console.log(this.inputForm);
-    if(!this.inputValidForm.valid) {
+    if (!this.inputValidForm.valid) {
       this.formValid = true;
     }
     // if(!this.inputValidForm.form.updateOn) {
