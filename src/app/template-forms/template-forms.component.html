@@ -108,16 +108,34 @@
         <!--<th>امتیازات</th>-->
       </tr>
     </thead>
-    <tbody *ngFor="let fan of fans">
-<!--    <tbody>-->
+    <tbody *ngFor="let user of users">
+    <!--<tbody>-->
       <tr>
-        <th>{{ fan.username }}</th>
-        <th>{{ fan.email }}</th>
-        <th>{{ fan.gender }}</th>
-        <th>{{ fan.website }}</th>
-        <th>{{ fan.educationDegree }}</th>
+        <th>{{ user.username }}</th>
+        <th>{{ user.email }}</th>
+        <th>{{ user.gender }}</th>
+        <th><a href = "https://www.w3schools.com">{{ user.website }}</a></th>
+        <th>{{ user.educationDegree }}</th>
         <!--<th>score</th>-->
       </tr>
     </tbody>
   </table> <!--Table End-->
 
+
+
+<!--<div class="form-check">-->
+<!--  <input type="checkbox" class="form-check-input" id="checkboxCart" [value]="checkboxCart" (change)="onChangeCheckboxCart($event)">-->
+<!--  <label class="form-check-label" for="checkboxCart">{{ checkboxCart }}</label>-->
+<!--</div>-->
+<!--<br>-->
+<!--<div class="form-check">-->
+<!--  <input type="checkbox" class="form-check-input" id="checkboxUnCart" [value]="checkboxUnCart" (change)="onChangeCheckboxUnCart($event)">-->
+<!--  <label class="form-check-label" for="checkboxUnCart">{{ checkboxUnCart }}</label>-->
+<!--</div>-->
+<!--<label>-->
+<!--  <input type="checkbox" [value]="checkboxValue" (change)="onSelect($event)">-->
+<!--  {{ checkboxValue }}</label>-->
+
+<!--<label>-->
+<!--  <input type="checkbox" [value]="checkboxValue" (change)="onSelect($event)">-->
+<!--  {{ checkboxValue }}</label>-->

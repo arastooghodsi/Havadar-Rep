@@ -1,8 +1,10 @@
 export class Fan {
-    username: string;
-    email: string;
-    gender: string;
-    website: string;
-    educationDegree: string;
 
+  constructor(
+    public username: string,
+    public email: string,
+    public gender: string,
+    public website: string,
+    public educationDegree
+  ) {  }
 }
