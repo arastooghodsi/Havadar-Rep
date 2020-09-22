@@ -48,7 +48,11 @@
     <p>وبسایت</p>
     <input style="direction: ltr" class="form-control" type="text" name="website" [(ngModel)]="website" ngModel>
     <span>وبسایت شما:{{ website }}</span> <!--User Websire Textbox End-->
-          <br><button type="submit" class="btn btn-primary" (click) = onClick()>بررسی سایت</button>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary" (click) = onClick()>بررسی سایت</button>
+
     <br><br>
 
     <!--RadioButton Start-->
@@ -104,14 +108,14 @@
         <!--<th>امتیازات</th>-->
       </tr>
     </thead>
-    <!--<tbody *ngFor="let user of users">-->
-    <tbody>
+    <tbody *ngFor="let fan of fans">
+<!--    <tbody>-->
       <tr>
-        <th>{{ users.username }}</th>
-        <th>{{ users.email }}</th>
-        <th>{{ users.gender }}</th>
-        <th>{{ users.website }}</th>
-        <th>{{ users.educationDegree }}</th>
+        <th>{{ fan.username }}</th>
+        <th>{{ fan.email }}</th>
+        <th>{{ fan.gender }}</th>
+        <th>{{ fan.website }}</th>
+        <th>{{ fan.educationDegree }}</th>
         <!--<th>score</th>-->
       </tr>
     </tbody>

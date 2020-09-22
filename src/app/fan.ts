@@ -1,18 +1,8 @@
-export class Hero {
-
-  // constructor(
-  //   public id: number,
-  //   public name: string,
-  //   public dateYear: string,
-  //   public teamFavorite: string
-  // ) {  }
-
-  constructor(
-    public id: number,
-    public name: string,
-    public power: string,
-    public alterEgo?: string
-  ) {  }
-
+export class Fan {
+    username: string;
+    email: string;
+    gender: string;
+    website: string;
+    educationDegree: string;
 
 }
